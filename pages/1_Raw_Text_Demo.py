@@ -17,7 +17,7 @@ Alice Smith
 alice.smith@emailprovider.com""",
     """Transaction ID: 10
 Amount: $500.00
-Card Number: 1234567890123456
+Card Number: 5425-2334-3010-9903
 Expiry Date: 12/25""",
     """Hello, my name is David Johnson and I live in Maine.
 My credit card number is 4095-2609-9393-4932 and my crypto wallet id is 16Yeky6GMjeNkAiNcBY7ZhrLoMSgg1BoyZ.
