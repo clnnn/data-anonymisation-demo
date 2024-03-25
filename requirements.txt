@@ -1,5 +1,7 @@
 presidio-analyzer[transformers]
 presidio-anonymizer
+presidio-image-redactor
+streamlit-image-comparison
 spacy
 streamlit
 pandas
