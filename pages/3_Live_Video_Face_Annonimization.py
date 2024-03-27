@@ -30,7 +30,7 @@ def annonymize_faces(frame: av.VideoFrame):
         face = image_copy[y:y+h, x:x+w]
         blurred_face = cv2.GaussianBlur(face, (99, 99), 30)
         image_copy[y:y+h, x:x+w] = blurred_face
-    return av.VideoFrame.from_ndarray(image_copy, format="yuv420p")
+    return av.VideoFrame.from_ndarray(image_copy, format="rgb24")
 
 
 webrtc = webrtc_streamer(key="streamer", sendback_audio=False, video_frame_callback=annonymize_faces,)
