@@ -13,5 +13,5 @@ This project is a demo for identifying and anonymizing PII data in a database
 1. Just run the following command in the terminal:
 
 ```bash
-streamlit run app.py
+streamlit run Home.py
 ```
