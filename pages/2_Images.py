@@ -24,4 +24,3 @@ else:
 
     # Compare the original image with the redacted image
     image_comparison(img1=image, img2=redacted_image)
-
