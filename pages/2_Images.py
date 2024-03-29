@@ -36,7 +36,7 @@ else:
     # Detect faces in the image
     detections = Detections.from_ultralytics(model(redacted_image)[0])
 
-    # Redact the image with pink color for each face detected
+    # Pixelate each face in the image
     redacted_image = face_annotator.annotate(redacted_image, detections)
 
     # Compare the original image with the redacted image

@@ -16,7 +16,7 @@ st.markdown(
             Analyze and anonymize PII in unstructured text. In this demo, you can input text that contains PII or select a predefined example. You are able to choose from different anonymization methods.
             
             #### Images
-            Analyze and anonymize PII in images. In this demo, you can upload an image that contains PII and it redacts the necessary data from the image.
+            Analyze and anonymize PII in images. In this demo, you can upload an image that contains PII and it redacts & pixelate the necessary data from the image.
             
             #### Live Video
             Analyze and anonymize PII in live video. In this demo, you can use your webcam to capture live video. The video will blur faces in real-time.
