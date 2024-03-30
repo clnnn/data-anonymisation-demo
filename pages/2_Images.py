@@ -5,10 +5,8 @@ from PIL import Image
 from presidio_image_redactor import ImageRedactorEngine
 
 
-import numpy as np
-import cv2
 from ultralytics import YOLO
-from supervision import Detections, PixelateAnnotator, Color
+from supervision import Detections, PixelateAnnotator
 
 
 st.set_page_config(page_title="Images", page_icon="🖼️")

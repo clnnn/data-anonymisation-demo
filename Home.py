@@ -25,7 +25,8 @@ st.markdown(
             - Python
             - Streamlit
             - Microsoft Presidio
-            - OpenCV
-            - MediaPipe
+            - Ultralytics 
+            - Spacy
+            - Supervision
             """
 )
