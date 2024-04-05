@@ -7,11 +7,14 @@ Medication: Lisinopril 10mg
     """,
     "Email": """
 Hi John,
-I hope you're doing well. Please find the attached invoice for your recent purchase.
+
+I hope you're doing well. I hope you liked the presentation and the demo I showed you about PII Analyzer and Anonymizer.
+If you have any questions, please contact me at voicu.moldovan@tss-yonder.com
         
 Best regards,
-Alice Smith
-alice.smith@emailprovider.com
+Voicu M.
+voicu.moldovan@tss-yonder.com
+Delivery Manager at Yonder
     """,
     "Transaction": """
 Transaction ID: 10

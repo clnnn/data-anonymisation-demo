@@ -33,6 +33,7 @@ else:
 
     # Detect faces in the image
     detections = Detections.from_ultralytics(model(redacted_image)[0])
+    detections = detections[detections.class_id == 0]
 
     # Pixelate each face in the image
     redacted_image = face_annotator.annotate(redacted_image, detections)
