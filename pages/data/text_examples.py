@@ -1,10 +1,8 @@
 text_examples = {
     "Medical Record": """
-Patient: Jane Doe
-Date of Birth: 05/15/1980
-Diagnosis: Hypertension
-Medication: Lisinopril 10mg
-    """,
+Patient John Doe, born in 10/10/1980 was admitted to the hospital on 2021-09-01. He presented with a fever of 102°F and a cough. We performed a chest X-ray and found signs of pneumonia. 
+We diagnosed him with COVID-19 and started treatment with remdesivir. He was discharged on 2021-09-10 and advised to self-isolate for 14 days. 
+His insurance ID is 123456789 and his SSN is 123456789.""",
     "Email": """
 Hi John,
 
