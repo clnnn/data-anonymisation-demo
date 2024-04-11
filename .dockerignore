@@ -1,0 +1,8 @@
+.devcontainer
+.github
+iac
+.dockerignore
+.gitignore
+Dockerfile
+README.md
+yolov8n.pt
