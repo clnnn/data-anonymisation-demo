@@ -21,9 +21,7 @@ with st.sidebar:
         "Model:", list(spacy_models.keys()), placeholder="Choose a model"
     )
     spacy_model = (
-        spacy_models[model]
-        if model in spacy_models
-        else spacy_models["English - Small (12MB)"]
+        spacy_models[model] if model in spacy_models else spacy_models["English"]
     )
 
     example = st.selectbox(
