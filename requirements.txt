@@ -6,6 +6,5 @@ spacy
 streamlit
 pandas
 streamlit-webrtc
-mediapipe
 ultralytics
 supervision
