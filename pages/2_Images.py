@@ -31,11 +31,15 @@ else:
     redacted_image = engine.redact(image, (255, 192, 203))
 
     # Detect license plates
-    model.set_classes(["", "license plate"])
-    license_plate_detections = Detections.from_ultralytics(
+    model.set_classes(["license_plate"])
+    license_plate_detections = Detections.from_ultralytics(model(redacted_image)[0])
+
+    model.set_classes(["license_plate", ""])
+    license_plate_background_detections = Detections.from_ultralytics(
         model(redacted_image)[0]
     ).with_nms(0.1, class_agnostic=True)
 
+    # Detect persons
     model.set_classes(["person"])
     person_detections = Detections.from_ultralytics(model(redacted_image)[0])
 
@@ -43,6 +47,9 @@ else:
 
     # Pixelate each face in the image
     redacted_image = annotator.annotate(redacted_image, license_plate_detections)
+    redacted_image = annotator.annotate(
+        redacted_image, license_plate_background_detections
+    )
     redacted_image = annotator.annotate(redacted_image, person_detections)
 
     # Compare the original image with the redacted image
