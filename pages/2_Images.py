@@ -55,7 +55,7 @@ if image_file is None:
 else:
     image = Image.open(image_file)
     redacted_image = annonymize_pii_text(image)
-    redacted_image = annonymize_license_plate(redacted_image)
+    redacted_image = annonymize_license_plate(image)
     redacted_image = annonymize_person(redacted_image)
 
     # Compare the original image with the redacted image
