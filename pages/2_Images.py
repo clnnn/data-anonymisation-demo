@@ -5,16 +5,15 @@ from PIL import Image
 from presidio_image_redactor import ImageRedactorEngine
 
 
-from ultralytics import YOLO
+from ultralytics import YOLOWorld
 from supervision import Detections, PixelateAnnotator
 
 
 st.set_page_config(page_title="Images", page_icon="🖼️")
 st.title("Images")
 
-# Load the YOLOv5 model and the bounding box annotator
-model = YOLO()
-face_annotator = PixelateAnnotator()
+model = YOLOWorld()
+annotator = PixelateAnnotator()
 
 # Upload an image
 image_file = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
@@ -31,12 +30,20 @@ else:
     # Redact the image with pink color if the images contains PII in text format
     redacted_image = engine.redact(image, (255, 192, 203))
 
-    # Detect faces in the image
-    detections = Detections.from_ultralytics(model(redacted_image)[0])
-    detections = detections[detections.class_id == 0]
+    # Detect license plates
+    model.set_classes(["", "license plate"])
+    license_plate_detections = Detections.from_ultralytics(
+        model(redacted_image)[0]
+    ).with_nms(0.1, class_agnostic=True)
+
+    model.set_classes(["person"])
+    person_detections = Detections.from_ultralytics(model(redacted_image)[0])
+
+    # Combine the detections
 
     # Pixelate each face in the image
-    redacted_image = face_annotator.annotate(redacted_image, detections)
+    redacted_image = annotator.annotate(redacted_image, license_plate_detections)
+    redacted_image = annotator.annotate(redacted_image, person_detections)
 
     # Compare the original image with the redacted image
     image_comparison(img1=image, img2=redacted_image)
