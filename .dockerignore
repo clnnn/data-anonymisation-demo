@@ -6,4 +6,4 @@ iac
 .gitignore
 Dockerfile
 README.md
-yolov8n.pt
+yolov*
