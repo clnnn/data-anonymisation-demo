@@ -9,6 +9,7 @@ RUN pip install --user spacy
 RUN python -m spacy download en_core_web_sm
 RUN python -m spacy download en_core_web_md
 RUN python -m spacy download en_core_web_lg
+RUN python -m spacy download nl_core_news_sm
 
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
